@@ -2,8 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const routers = require('./router');
-const host = process.env.HOST;
-const port = process.env.PORT;
+let config = require('config');
+const host = process.env.HOST || config.get("HOST");
+const port = process.env.PORT || config.get("PORT");
 
 app.use(bodyParser.urlencoded({
     exstended : true
