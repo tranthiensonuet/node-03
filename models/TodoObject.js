@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const db = require('mongodb/db.js');
 
 const todoSchema = new Schema({
     title:
@@ -18,4 +17,4 @@ const todoSchema = new Schema({
             default: Date.now
         }
 });
-module.exports = db.model('TodoObject', todoSchema);
+module.exports = mongoose.model('TodoObject', todoSchema);
