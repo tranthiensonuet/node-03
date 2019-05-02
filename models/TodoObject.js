@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
-let db = require('./database/db');
+let db = require('../database/db');
 
 let todoSchema = new Schema({
     title:
@@ -14,7 +14,7 @@ let todoSchema = new Schema({
         },
     created:
         {
-            type: String,
+            type: Date,
             default: Date.now
         }
 });
