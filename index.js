@@ -1,10 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const routers = require('./router');
+let express = require('express');
+let bodyParser = require('body-parser');
+let app = express();
+let routers = require('./router');
 let config = require('config');
-const host = process.env.HOST || config.get("HOST");
-const port = process.env.PORT || config.get("PORT");
+
+let host = process.env.HOST || config.get("HOST");
+let port = process.env.PORT || config.get("PORT");
 
 app.use(bodyParser.urlencoded({
     exstended : true

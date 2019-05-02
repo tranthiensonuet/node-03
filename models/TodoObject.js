@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+let db = require('./database/db');
 
-const todoSchema = new Schema({
+let todoSchema = new Schema({
     title:
         {
             type: String
@@ -17,4 +18,4 @@ const todoSchema = new Schema({
             default: Date.now
         }
 });
-module.exports = mongoose.model('TodoObject', todoSchema);
+module.exports = db.model('todo', todoSchema);

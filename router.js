@@ -2,14 +2,10 @@ let router = require('express').Router();
 let todoList = require('./models/TodoObject');
 
 router.post('/', async (req, res) => {
-
     try {
         let {title} = req.body;
-
         let TodoObject = new todoList({title: title});
-
         let data = await TodoObject.save();
-
         res.status(200).send({
             success: true,
             data
@@ -34,7 +30,7 @@ router.get('/:id', async (req, res) => {
 router.post('/:id', async (req, res) => {
     try{
         let {title} = req.body
-        const data = await todoList.findByIdAndUpdate(req.params.id,
+        let data = await todoList.findByIdAndUpdate(req.params.id,
             { $set: {title}}, {new: true});
         res.status(200).send({
             success: true,
